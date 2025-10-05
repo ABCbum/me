@@ -262,6 +262,12 @@ h1 {
     line-height: 1.4;
 }
 
+.publication-note {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--gray);
+}
+
 .publication-authors {
     font-size: 0.9rem;
     color: var(--gray);
