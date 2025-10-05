@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --paper: #faf8f5;
+    --ink: #2c2c2c;
+    --gray: #666666;
+    --light-gray: #999999;
+    --divider: #d4cfc7;
+    --accent: #8b7355;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.7;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(212, 207, 199, 0.03) 2px,
+            rgba(212, 207, 199, 0.03) 4px);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* Navigation */
+.nav-menu {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background-color: rgba(139, 115, 85, 0.1);
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--divider);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.profile-content {
+    flex: 1;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* Content Sections */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: var(--ink);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--divider);
+}
+
+.section h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 30px 0 15px 0;
+    color: var(--ink);
+}
+
+.section p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            var(--divider) 20%,
+            var(--divider) 80%,
+            transparent);
+    margin: 30px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    opacity: 0.6;
+}
+
+/* Abstract */
+.abstract {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 3px solid var(--accent);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.abstract h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Items */
+.update-item,
+.publication-item,
+.education-item,
+.experience-item,
+.achievement-item {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--divider);
+}
+
+.update-item:last-child,
+.publication-item:last-child,
+.education-item:last-child,
+.experience-item:last-child,
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.item-date {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    margin-bottom: 4px;
+}
+
+.item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--ink);
+}
+
+.item-subtitle {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.publication-authors {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 3px;
+}
+
+.publication-venue {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    font-style: italic;
+}
+
+/* Citation */
+.citation {
+    font-style: italic;
+    color: var(--gray);
+    border-left: 2px solid var(--divider);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-size: 0.95rem;
+}
+
+/* References */
+.references {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--divider);
+}
+
+.references h2 {
+    margin-bottom: 30px;
+}
+
+.reference-item {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--gray);
+    padding-left: 20px;
+    text-indent: -20px;
+}
+
+/* Footer */
+.metadata {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--divider);
+    font-size: 0.85rem;
+    color: var(--light-gray);
+}
+
+.page-number {
+    font-family: 'Courier New', monospace;
+}
+
+/* Drop Cap */
+.drop-cap {
+    float: left;
+    font-size: 4rem;
+    line-height: 3rem;
+    margin-right: 8px;
+    margin-top: -5px;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-content {
+        width: 100%;
+    }
+
+    .profile-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 0.85rem;
+    }
+
+    .metadata {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        margin-bottom: 30px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        width: 100%;
+        max-width: 160px;
+        text-align: center;
+        border: 1px solid var(--divider);
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-menu a:hover {
+        background-color: rgba(139, 115, 85, 0.15);
+        border-color: var(--accent);
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section h3 {
+        font-size: 1.2rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .abstract {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .item-title {
+        font-size: 0.95rem;
+    }
+
+    .item-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .item-description {
+        font-size: 0.85rem;
+    }
+
+    .publication-authors {
+        font-size: 0.85rem;
+    }
+
+    .publication-venue {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        font-size: 0.8rem;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section h3 {
+        font-size: 1.1rem;
+    }
+
+    .section p {
+        font-size: 0.95rem;
+    }
+
+    .abstract {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        max-width: 140px;
+    }
+}
